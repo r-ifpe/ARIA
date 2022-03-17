@@ -1,17 +1,17 @@
 ---
-title: "sistec: Tools to Analyze Sistec Datasets"
+title: "ARIA: Tools to Analyze and Update Sistec Datasets"
 output:
   github_document:
     fig_width: 9
     fig_height: 5
 ---
 
-  [![Travis build status](https://travis-ci.org/r-ifpe/sistec.svg?branch=master)](https://travis-ci.org/r-ifpe/sistec)
-  [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/sistec)](https://cran.r-project.org/package=sistec)
-  [![R build status](https://github.com/R-IFPE/sistec/workflows/R-ubuntu/badge.svg)](https://github.com/R-IFPE/sistec/actions)
-  [![R build status](https://github.com/R-IFPE/sistec/workflows/R-macOS/badge.svg)](https://github.com/R-IFPE/sistec/actions)
-  [![CircleCI build status](https://circleci.com/gh/r-ifpe/sistec.svg?style=svg)](https://circleci.com/gh/r-ifpe/sistec)
-[<img src="tools/readme/brasil_icon.png" width=22 height=22>](https://github.com/r-ifpe/sistec/blob/master/LEIAME.md)
+  [![Travis build status](https://travis-ci.org/r-ifpe/sistec.svg?branch=master)](https://travis-ci.org/r-ifpe/ARIA)
+  [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/ARIA)](https://cran.r-project.org/package=ARIA)
+  [![R build status](https://github.com/R-IFPE/ARIA/workflows/R-ubuntu/badge.svg)](https://github.com/R-IFPE/ARIA/actions)
+  [![R build status](https://github.com/R-IFPE/ARIA/workflows/R-macOS/badge.svg)](https://github.com/R-IFPE/ARIA/actions)
+  [![CircleCI build status](https://circleci.com/gh/r-ifpe/sistec.svg?style=svg)](https://circleci.com/gh/r-ifpe/ARIA)
+[<img src="tools/readme/brasil_icon.png" width=22 height=22>](https://github.com/r-ifpe/ARIA/blob/master/LEIAME.md)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval = FALSE)
@@ -26,19 +26,19 @@ The [Sistec](https://sistec.mec.gov.br/) is the Brazilian system for diploma reg
 You can install the sistec package from [CRAN](https://CRAN.r-project.org) as follows:
 
 ```{r, eval=FALSE}
-install.packages("sistec")
+install.packages("ARIA")
 ```
 
 To upgrade to the latest version of sistec, run the following command and restart your R session:
 
 ```{r, eval=FALSE}
 install.packages("devtools")
-devtools::install_github("r-ifpe/sistec")
+devtools::install_github("r-ifpe/ARIA")
 ```
 
 Load the package.
 ```{r eval=FALSE}
-library(sistec)
+library(ARIA)
 ```
 
 ## Sistec datasets
@@ -113,8 +113,8 @@ latin1 encoding. Semicolons separators and UTF-8 enconding are also available.
 Load the sistec package and pass the folder path to `read_sistec()` and `read_rfept()` functions. (**NOTE**: These datasets were generated randomly and do not represent the reality, it is just for example purpose).
 
 ```{r eval=FALSE}
-sistec <- read_sistec(system.file("extdata/examples/sistec", package = "sistec"))
-qacademico <- read_rfept(system.file("extdata/examples/qacademico", package = "sistec"))
+sistec <- read_sistec(system.file("extdata/examples/sistec", package = "ARIA"))
+qacademico <- read_rfept(system.file("extdata/examples/qacademico", package = "ARIA"))
 ```
 
 ## Comparison
