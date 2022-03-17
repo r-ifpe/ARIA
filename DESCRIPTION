@@ -1,6 +1,6 @@
-Package: sistec
+Package: ARIA
 Type: Package
-Title: Tools to Analyze 'Sistec' Datasets
+Title: Tools to Analyze and Update 'Sistec' Datasets
 Version: 0.2.0.9012
 Authors@R: c(
     person("Samuel", "Macêdo", email = "samuelmacedo@recife.ifpe.edu.br", role = c("aut", "cre")),
@@ -16,8 +16,8 @@ Description: The Brazilian system for diploma registration and validation on tec
     about their situation, retention and drop out.
 License: GPL (>= 2)
 LazyData: true
-URL: https://github.com/r-ifpe/sistec
-BugReports: https://github.com/r-ifpe/sistec/issues
+URL: https://github.com/r-ifpe/ARIA
+BugReports: https://github.com/r-ifpe/ARIA/issues
 Depends:
     R (>= 3.6)
 Imports: 
@@ -29,7 +29,7 @@ Imports:
     stats,
     tcltk,
     utils
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     testthat
 Encoding: UTF-8
