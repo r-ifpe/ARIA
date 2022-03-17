@@ -3,8 +3,13 @@ context("compare_sistec")
 test_that("compare_sistec qacademico works", {
   skip_on_cran()
 
-  sistec_path <- system.file("extdata/test_datasets/sistec", package = "sistec")
-  qacademico_path <- system.file("extdata/test_datasets/qacademico", package = "sistec")
+  sistec_path <- system.file(
+    "extdata/test_datasets/sistec", package = "ARIA"
+  )
+  
+  qacademico_path <- system.file(
+    "extdata/test_datasets/qacademico", package = "ARIA"
+  )
 
   qacademico <- read_rfept(qacademico_path)
   sistec <- read_sistec(sistec_path)
@@ -21,10 +26,10 @@ test_that("compare_sistec generic rfept works", {
   skip_on_cran()
 
   sistec_path <- system.file("extdata/test_datasets/generic_rfept/sistec",
-    package = "sistec"
+    package = "ARIA"
   )
   rfept_path <- system.file("extdata/test_datasets/generic_rfept/rfept",
-    package = "sistec"
+    package = "ARIA"
   )
 
   rfept <- read_rfept(rfept_path)

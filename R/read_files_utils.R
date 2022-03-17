@@ -10,7 +10,7 @@ num_para_cpf <- function(cpf) {
 co_unidade_ensino <- function() {
   co_unidade_ensino <- utils::read.csv(system.file(
     "extdata/co_unidade_ensino/co_unidade_ensino.csv",
-    package = "sistec"
+    package = "ARIA"
   ),
   colClasses = "character", fileEncoding = "UTF-8"
   )

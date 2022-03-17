@@ -37,14 +37,14 @@ Tip: To take every student for your institution/campus using web, search by stud
 \examples{
 # this dataset is not a real one. It is just for test purpose.
 sistec <- read_sistec(system.file("extdata/examples/sistec",
-  package = "sistec"
+  package = "ARIA"
 ))
 
 sistec
 
 # example selecting the period
 sistec_2019_2 <- read_sistec(
-  system.file("extdata/examples/sistec", package = "sistec"),
+  system.file("extdata/examples/sistec", package = "ARIA"),
   start = "2019.2"
 )
 

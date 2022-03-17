@@ -4,7 +4,7 @@ test_that("read_sistec works", {
   skip_on_cran()
 
   sistec <- read_sistec(system.file("extdata/examples/sistec",
-    package = "sistec"
+    package = "ARIA"
   ))
 
   check_sistec_table(sistec, expect_nrow = 200)
@@ -20,7 +20,7 @@ test_that("encoding and sep work", {
   
   # latin1 and ,
   sistec <- read_sistec(system.file("extdata/test_datasets/sistec_encoding/latin1",
-    package = "sistec"
+    package = "ARIA"
   ))
 
   if (windows) {
@@ -31,7 +31,7 @@ test_that("encoding and sep work", {
 
   # UTF-8 and ;
   sistec <- read_sistec(system.file("extdata/test_datasets/sistec_encoding/utf8",
-    package = "sistec"
+    package = "ARIA"
   ))
 
   expect_true(any(stringr::str_detect(sistec$S_NO_CURSO, utf_8_characters)))
@@ -40,7 +40,7 @@ test_that("encoding and sep work", {
 test_that("co_unidade_ensino works", {
   skip_on_cran()
 
-  co_unidade_ensino <- sistec:::co_unidade_ensino()
+  co_unidade_ensino <- ARIA:::co_unidade_ensino()
   expect_named(co_unidade_ensino, c("S_NO_CAMPUS", "CO_UNIDADE_ENSINO"))
 
   cities <- "JABOAT\u00c3O|CHAPEC\u00d3|CAMBORI\u00da|BAMBU\u00cd"

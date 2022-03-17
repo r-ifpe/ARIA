@@ -3,14 +3,14 @@ test_that("read_ciclo works", {
   
   ciclo <- read_ciclo(
     system.file(
-      "extdata/test_pnp_critics/ciclo", package = "sistec"
+      "extdata/test_pnp_critics/ciclo", package = "ARIA"
     ))
   
   check_ciclo_table(ciclo, 160)
 
   ciclo <- read_ciclo(
     system.file(
-      "extdata/test_pnp_critics/ciclo", package = "sistec"
+      "extdata/test_pnp_critics/ciclo", package = "ARIA"
     ), start = "2020.1")
   
   

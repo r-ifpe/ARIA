@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' library(sistec)
+#' library(ARIA)
 #'
 #' # use this to run aria in your R environment
 #' aria()

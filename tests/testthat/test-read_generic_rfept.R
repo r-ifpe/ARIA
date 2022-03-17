@@ -5,7 +5,7 @@ test_that("read_generic_rfept", {
 
   rfept <- read_generic_rfept(
     system.file("extdata/test_datasets/generic_rfept/rfept",
-      package = "sistec"
+      package = "ARIA"
     )
   )
 
@@ -19,7 +19,7 @@ test_that("detect_sep works", {
   expect_error(
     read_generic_rfept(
       system.file("extdata/test_datasets/generic_rfept/wrong_separator",
-        package = "sistec"
+        package = "ARIA"
       )
     ),
     "Separador diferente de tab ou ; ou ,"
@@ -32,7 +32,7 @@ test_that("check_rfept_header works", {
   expect_error(
     read_generic_rfept(
       system.file("extdata/test_datasets/generic_rfept/wrong_header",
-        package = "sistec"
+        package = "ARIA"
       )
     ),
     "Sistema acad\u00eamico: As colunas NU_CPF, DT_INICIO_CURSO est\u00e3o faltando."
@@ -45,7 +45,7 @@ test_that("check_rfept_cpf works", {
   expect_error(
     read_generic_rfept(
       system.file("extdata/test_datasets/generic_rfept/wrong_cpf",
-        package = "sistec"
+        package = "ARIA"
       )
     ),
     "Sistema acad\u00eamico: Os CPF's n\u00e3o est\u00e3o no formato xxx.xxx.xxx-xx."
@@ -58,7 +58,7 @@ test_that("check_rfept_course_beginning_date works", {
   expect_error(
     read_generic_rfept(
       system.file("extdata/test_datasets/generic_rfept/wrong_beginning_date",
-        package = "sistec"
+        package = "ARIA"
       )
     ),
     paste(
@@ -76,7 +76,7 @@ test_that("check_rfept_status works", {
   expect_error(
     read_generic_rfept(
       system.file("extdata/test_datasets/generic_rfept/wrong_status",
-        package = "sistec"
+        package = "ARIA"
       )
     ),
     paste(
@@ -94,7 +94,7 @@ test_that("check_rfept_cota works", {
   expect_error(
     read_generic_rfept(
       system.file("extdata/test_datasets/generic_rfept/wrong_cota",
-        package = "sistec"
+        package = "ARIA"
       )
     ),
     paste(
