@@ -1,16 +1,16 @@
-sistec: Tools to Analyze Sistec Datasets
+ARIA: Tools to Analyze and Update Sistec Datasets
 ================
 
 [![Travis build
-status](https://travis-ci.org/r-ifpe/sistec.svg?branch=master)](https://travis-ci.org/r-ifpe/sistec)
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/sistec)](https://cran.r-project.org/package=sistec)
+status](https://travis-ci.org/r-ifpe/sistec.svg?branch=master)](https://travis-ci.org/r-ifpe/ARIA)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/ARIA)](https://cran.r-project.org/package=ARIA)
 [![R build
-status](https://github.com/R-IFPE/sistec/workflows/R-ubuntu/badge.svg)](https://github.com/R-IFPE/sistec/actions)
+status](https://github.com/R-IFPE/ARIA/workflows/R-ubuntu/badge.svg)](https://github.com/R-IFPE/ARIA/actions)
 [![R build
-status](https://github.com/R-IFPE/sistec/workflows/R-macOS/badge.svg)](https://github.com/R-IFPE/sistec/actions)
+status](https://github.com/R-IFPE/ARIA/workflows/R-macOS/badge.svg)](https://github.com/R-IFPE/ARIA/actions)
 [![CircleCI build
-status](https://circleci.com/gh/r-ifpe/sistec.svg?style=svg)](https://circleci.com/gh/r-ifpe/sistec)
-[<img src="tools/readme/brasil_icon.png" width=22 height=22>](https://github.com/r-ifpe/sistec/blob/master/LEIAME.md)
+status](https://circleci.com/gh/r-ifpe/sistec.svg?style=svg)](https://circleci.com/gh/r-ifpe/ARIA)
+[<img src="tools/readme/brasil_icon.png" width=22 height=22>](https://github.com/r-ifpe/ARIA/blob/master/LEIAME.md)
 
 The [Sistec](https://sistec.mec.gov.br/) is the Brazilian system for
 diploma registration and validation on technical and superior courses.
@@ -24,7 +24,7 @@ You can install the sistec package from
 [CRAN](https://CRAN.r-project.org) as follows:
 
 ``` r
-install.packages("sistec")
+install.packages("ARIA")
 ```
 
 To upgrade to the latest version of sistec, run the following command
@@ -32,13 +32,13 @@ and restart your R session:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("r-ifpe/sistec")
+devtools::install_github("r-ifpe/ARIA")
 ```
 
 Load the package.
 
 ``` r
-library(sistec)
+library(ARIA)
 ```
 
 ## Sistec datasets
@@ -49,27 +49,27 @@ account on Sistec. The package provides support if your data comes from
 or [web](https://sistec.mec.gov.br/). Be sure that your data has these
 variables:
 
-  - On setec: “Nome Aluno”, “Numero Cpf”, “Co Ciclo Matricula”,
+-   On setec: “Nome Aluno”, “Numero Cpf”, “Co Ciclo Matricula”,
     “Situacao Matricula”, “No Curso”, “Dt Data Inicio” and “Unidade
     Ensino”.
 
-  - On web: “NO\_ALUNO”, “NU\_CPF”, “CO\_CICLO\_MATRICULA”,
-    “NO\_STATUS\_MATRICULA”, “NO\_CICLO\_MATRICULA”,
-    “DT\_DATA\_INICIO” and “CO\_UNIDADE\_ENSINO”.
+-   On web: “NO_ALUNO”, “NU_CPF”, “CO_CICLO_MATRICULA”,
+    “NO_STATUS_MATRICULA”, “NO_CICLO_MATRICULA”, “DT_DATA_INICIO” and
+    “CO_UNIDADE_ENSINO”.
 
 Tip: To take every student for your institution/campus using web, search
-by student name and use " ".
+by student name and use ” “.
 
 ## Qacademico datasets
 
 To download the student’s data, go to your proper account on Qacademico
 and follow:
 
-  - “Relatorio de Alunos” –\> “Listagem de Alunos” (choose year and
+-   “Relatorio de Alunos” –> “Listagem de Alunos” (choose year and
     period)
-  - Click on “visualizar”
-  - Using f10 shortcut and save in .csv format.
-  - Rename the including year and period (example2020\_1.csv)
+-   Click on “visualizar”
+-   Using f10 shortcut and save in .csv format.
+-   Rename the including year and period (example2020_1.csv)
 
 Be sure that your data has the variables: “Matricula”, “Nome”, “Situacao
 Matricula”, “Curso”, “Cpf”, “Instituicao”, “Per. Letivo Inicial” and
@@ -84,26 +84,27 @@ and “Cota”.
 To download the partial Sigaa’s data, go to your proper account on Sigaa
 and follow:
 
-  - Access the panel “Consultas” inside Sigaa module;
-  - Generate the report “Consulta geral discentes”;
-  - Select the check box “Trazer informações em forma de relatório” e
+-   Access the panel “Consultas” inside Sigaa module;
+-   Generate the report “Consulta geral discentes”;
+-   Select the check box “Trazer informações em forma de relatório” e
     “Gerar csv”;
-  - Select the filter “Campus” and other filter you desire;
-  - Click on “Buscar” and download the file.
+-   Select the filter “Campus” and other filter you desire;
+-   Click on “Buscar” and download the file.
 
 For the complete dataset, you have to download directly from the Sigaa
 database. Be sure that your data has the variables: “Matricula”, “Nome”,
-“Situacao Matricula”, “Curso”, “Cpf”, “Instituicao”, “ano\_ingresso”,
-“semestre\_ingresso” and “Cota”.
+“Situacao Matricula”, “Curso”, “Cpf”, “Instituicao”, “ano_ingresso”,
+“semestre_ingresso” and “Cota”.
 
 ## Conecta datasets
 
 To download Conecta datasets from the database follow these steps:
 
-  - Access "Curr
-  - Select a view that contains the variables: “RA”, “NOME\_ALUNO”,
-    “STATUS\_NO\_CURSO”, “Cota Chamado”, “NOME\_CURSO”, “CPF”,
-    “NOME\_CAMPUS”, “DATA\_INGRESSO\_CURSO”.
+-   Access “Curr0edculo e Oferta” -> “Matrizes Curriculares” -> “Anexos”
+    -> “Consulta SQL”;
+-   Select a view that contains the variables: “RA”, “NOME_ALUNO”,
+    “STATUS_NO_CURSO”, “Cota Chamado”, “NOME_CURSO”, “CPF”,
+    “NOME_CAMPUS”, “DATA_INGRESSO_CURSO”.
 
 ## Generic datasets
 
@@ -114,17 +115,17 @@ transform your academic database into a generic layout and use
 To transform your database in a generic rfept layout, follow these
 requirements:
 
-  - Rename your columns to: NO\_ALUNO, NU\_CPF, CO\_MATRICULA,
-    NO\_STATUS\_MATRICULA, NO\_CURSO, DT\_INICIO\_CURSO, NO\_CAMPUS and
-    NO\_COTA;
-  - All variables should be inherited to string class;
-  - The CPF’s should be in xxx.xxx.xxx-xx format;
-  - The beginning date should be in yyyy.s format. Ex.: 2020.1. Use 1
+-   Rename your columns to: NO_ALUNO, NU_CPF, CO_MATRICULA,
+    NO_STATUS_MATRICULA, NO_CURSO, DT_INICIO_CURSO, NO_CAMPUS and
+    NO_COTA;
+-   All variables should be inherited to string class;
+-   The CPF’s should be in xxx.xxx.xxx-xx format;
+-   The beginning date should be in yyyy.s format. Ex.: 2020.1. Use 1
     for first semester and 2 for second.
-  - Convert the student’s status to valid name in Sistec, use: ABANDONO,
-    EM\_CURSO, CONCLUÍDA, DESLIGADO, INTEGRALIZADA, REPROVADA and
-    TRANSF\_EXT;
-  - Save your data in a single file in csv format separated by comma and
+-   Convert the student’s status to valid name in Sistec, use: ABANDONO,
+    EM_CURSO, CONCLUÍDA, DESLIGADO, INTEGRALIZADA, REPROVADA and
+    TRANSF_EXT;
+-   Save your data in a single file in csv format separated by comma and
     use latin1 encoding. Semicolons separators and UTF-8 enconding are
     also available.
 
@@ -136,8 +137,8 @@ randomly and do not represent the reality, it is just for example
 purpose).
 
 ``` r
-sistec <- read_sistec(system.file("extdata/examples/sistec", package = "sistec"))
-qacademico <- read_rfept(system.file("extdata/examples/qacademico", package = "sistec"))
+sistec <- read_sistec(system.file("extdata/examples/sistec", package = "ARIA"))
+qacademico <- read_rfept(system.file("extdata/examples/qacademico", package = "ARIA"))
 ```
 
 ## Comparison

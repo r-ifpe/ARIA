@@ -15,15 +15,15 @@
 #' @examples 
 #' # these datasets are not a real ones. It is just for test purpose.
 #' 
-#' qacademico <- read_rfept(system.file("extdata/examples/qacademico", package = "sistec")) 
+#' qacademico <- read_rfept(system.file("extdata/examples/qacademico", package = "ARIA")) 
 #'                                      
-#' sigaa <- read_rfept(system.file("extdata/examples/sigaa", package = "sistec"))
+#' sigaa <- read_rfept(system.file("extdata/examples/sigaa", package = "ARIA"))
 #'    
 #' class(qacademico)
 #' class(sigaa)
 #' 
 #' # example selecting the period
-#' qacademico_2019_2 <- read_rfept(system.file("extdata/examples/qacademico", package = "sistec"),
+#' qacademico_2019_2 <- read_rfept(system.file("extdata/examples/qacademico", package = "ARIA"),
 #'                                 start = "2019.2") 
 #' 
 #' class(qacademico_2019_2)                                 

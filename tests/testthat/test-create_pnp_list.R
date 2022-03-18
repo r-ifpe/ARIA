@@ -3,15 +3,15 @@ test_that("create_pnp_list works", {
   
   students <- read_sistec_students(
     system.file(
-      "extdata/test_pnp_critics/students", package = "sistec"
+      "extdata/test_pnp_critics/students", package = "ARIA"
     ))
   
   ciclo <- read_ciclo(
     system.file(
-      "extdata/test_pnp_critics/ciclo", package = "sistec"
+      "extdata/test_pnp_critics/ciclo", package = "ARIA"
     ))
   
-  pnp <- sistec:::create_pnp_critics_list(students, ciclo)
+  pnp <- ARIA:::create_pnp_critics_list(students, ciclo)
   
   expect_equal(length(pnp), 5)
   expect_equal(dim(pnp$sistec), c(2767, 16))
@@ -22,15 +22,15 @@ test_that("create_pnp_list works", {
   
   students <- read_sistec_students(
     system.file(
-      "extdata/test_pnp_critics/students", package = "sistec"
+      "extdata/test_pnp_critics/students", package = "ARIA"
     ), start = "2020.1")
   
   ciclo <- read_ciclo(
     system.file(
-      "extdata/test_pnp_critics/ciclo", package = "sistec"
+      "extdata/test_pnp_critics/ciclo", package = "ARIA"
     ), start = "2020.1")
   
-  pnp <- sistec:::create_pnp_critics_list(students, ciclo)
+  pnp <- ARIA:::create_pnp_critics_list(students, ciclo)
   
   expect_equal(length(pnp), 5)
   expect_equal(dim(pnp$sistec), c(455, 16))

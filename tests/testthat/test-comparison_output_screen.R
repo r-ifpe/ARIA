@@ -3,8 +3,8 @@ context("comparison_output_screen")
 test_that("comparison_output_screen works ", {
   skip_on_cran()
 
-  sistec_path <- system.file("extdata/test_datasets/sistec", package = "sistec")
-  rfept_path <- system.file("extdata/test_datasets/qacademico", package = "sistec")
+  sistec_path <- system.file("extdata/test_datasets/sistec", package = "ARIA")
+  rfept_path <- system.file("extdata/test_datasets/qacademico", package = "ARIA")
 
   rfept <- read_rfept(rfept_path)
   sistec <- read_sistec(sistec_path)

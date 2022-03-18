@@ -13,7 +13,7 @@
 #' 
 #' @examples  
 #' linked_courses <- read_linked_courses(system.file("extdata/examples/linked_courses",
-#'                                                   package = "sistec"), "csv")
+#'                                                   package = "ARIA"), "csv")
 #' 
 #' linked_courses
 #' @export

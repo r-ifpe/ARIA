@@ -23,7 +23,7 @@
 #' @examples
 #' # this dataset is not a real one. It is just for test purpose.
 #' qacademico <- read_qacademico(system.file("extdata/examples/qacademico",
-#'   package = "sistec"
+#'   package = "ARIA"
 #' ))
 #'
 #' qacademico

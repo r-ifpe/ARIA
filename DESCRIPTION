@@ -1,7 +1,7 @@
 Package: ARIA
 Type: Package
 Title: Tools to Analyze and Update 'Sistec' Datasets
-Version: 0.2.0.9012
+Version: 0.3.0.9000
 Authors@R: c(
     person("Samuel", "Macêdo", email = "samuelmacedo@recife.ifpe.edu.br", role = c("aut", "cre")),
     person("Carlos", "Patrício", email = "carlos.patricio@vitoria.ifpe.edu.br", role = "aut"),

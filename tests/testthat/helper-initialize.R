@@ -162,9 +162,9 @@ download_test_datasets <- function(test_datasets_folder = NULL) {
     stop("You need to specify a path.")
   }
 
-  if (system.file(test_datasets_folder, package = "sistec") == "") {
+  if (system.file(test_datasets_folder, package = "ARIA") == "") {
     datasets_path <- paste0(
-      system.file(package = "sistec"), "/",
+      system.file(package = "ARIA"), "/",
       test_datasets_folder, "/"
     )
 
@@ -203,20 +203,20 @@ download_test_datasets <- function(test_datasets_folder = NULL) {
     destfile <- paste0(datasets_path, test_files)
 
     datasests_paths <- c(
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/qacademico/fake_data_qacademico_2019_1.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/qacademico/fake_data_qacademico_2019_2.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/qacademico/fake_data_qacademico_2020_1.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/sistec/fake_data_sistec_2019.1_2020.1.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/sistec_encoding/latin1/fake_data_sistec_latin1.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/sistec_encoding/utf8/fake_data_sistec_utf8.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/rfept/rfept.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/sistec/sistec.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/wrong_beginning_date/fake_generic_rfept.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/wrong_cota/fake_generic_rfept.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/wrong_cpf/fake_generic_rfept.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/wrong_header/fake_generic_rfept.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/wrong_separator/fake_generic_rfept.csv",
-      "https://raw.githubusercontent.com/r-ifpe/sistec/master/inst/extdata/test_datasets/generic_rfept/wrong_status/fake_generic_rfept.csv"
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/qacademico/fake_data_qacademico_2019_1.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/qacademico/fake_data_qacademico_2019_2.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/qacademico/fake_data_qacademico_2020_1.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/sistec/fake_data_sistec_2019.1_2020.1.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/sistec_encoding/latin1/fake_data_sistec_latin1.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/sistec_encoding/utf8/fake_data_sistec_utf8.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/rfept/rfept.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/sistec/sistec.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_beginning_date/fake_generic_rfept.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_cota/fake_generic_rfept.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_cpf/fake_generic_rfept.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_header/fake_generic_rfept.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_separator/fake_generic_rfept.csv",
+      "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_status/fake_generic_rfept.csv"
     )
 
     for (i in 1:length(destfile)) {
@@ -233,12 +233,12 @@ test_aria_file <- function(x) {
   if (x == "rfept") {
     test_file_path <- system.file(
       "extdata/test_datasets/qacademico/fake_data_qacademico_2020_1.csv",
-      package = "sistec"
+      package = "ARIA"
     )
   } else {
     test_file_path <- system.file(
       "extdata/test_datasets/sistec/fake_data_sistec_2019.1_2020.1.csv",
-      package = "sistec"
+      package = "ARIA"
     )
   }
 

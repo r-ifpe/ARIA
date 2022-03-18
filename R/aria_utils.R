@@ -8,7 +8,7 @@ aria_head_tags <- function() {
 }
 
 aria_version <- function() {
-  description_path <- system.file("DESCRIPTION", package = "sistec")
+  description_path <- system.file("DESCRIPTION", package = "ARIA")
   as.character(read.dcf(description_path, fields = "Version"))
 }
 

@@ -3,12 +3,12 @@ test_that("pnp_beginning_date_gt_beginning_ciclo_date works", {
   
   students <- read_sistec_students(
     system.file(
-      "extdata/test_pnp_critics/students", package = "sistec"
+      "extdata/test_pnp_critics/students", package = "ARIA"
     ))
   
   ciclo <- read_ciclo(
     system.file(
-      "extdata/test_pnp_critics/ciclo", package = "sistec"
+      "extdata/test_pnp_critics/ciclo", package = "ARIA"
     ))
   
   pnp <- create_pnp_critics_list(students, ciclo)

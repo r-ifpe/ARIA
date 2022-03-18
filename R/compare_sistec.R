@@ -22,10 +22,10 @@
 #' # these datasets are not real. It is just for test purpose.
 #' 
 #' sistec <- read_sistec(system.file("extdata/examples/sistec",
-#'                                   package = "sistec"))
+#'                                   package = "ARIA"))
 #'                                   
 #' rfept <- read_rfept(system.file("extdata/examples/qacademico",
-#'                                 package = "sistec"))
+#'                                 package = "ARIA"))
 #'                                           
 #' compare_sistec(sistec, rfept) 
 #' @export

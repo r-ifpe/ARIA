@@ -23,7 +23,7 @@ sistec_panel <- function(version){
 manual_panel <- function(){
   shiny::tabPanel("MANUAL",
     shiny::includeHTML(system.file(
-      "extdata/docs/aria/manual_panel.html", package = "sistec"
+      "extdata/docs/aria/manual_panel.html", package = "ARIA"
     ))
   )
 }

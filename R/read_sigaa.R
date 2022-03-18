@@ -28,7 +28,7 @@
 #' @examples  
 #' # this dataset is not a real one. It is just for test purpose.
 #' sigaa <- read_sigaa(system.file("extdata/examples/sigaa",
-#'                                 package = "sistec"))
+#'                                 package = "ARIA"))
 #' 
 #' sigaa
 #' @importFrom dplyr %>% sym 

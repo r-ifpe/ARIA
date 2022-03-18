@@ -3,8 +3,8 @@ context("write_output")
 test_that("write_output() works", {
   skip_on_cran()
 
-  sistec_path <- system.file("extdata/examples/sistec", package = "sistec")
-  rfept_path <- system.file("extdata/examples/qacademico", package = "sistec")
+  sistec_path <- system.file("extdata/examples/sistec", package = "ARIA")
+  rfept_path <- system.file("extdata/examples/qacademico", package = "ARIA")
 
   sistec <- dplyr::filter(
     read_sistec(sistec_path),
@@ -80,8 +80,8 @@ test_that("write_output() works", {
 test_that("write_output() deletes an existed ARIA folder", {
   skip_on_cran()
 
-  sistec_path <- system.file("extdata/examples/sistec", package = "sistec")
-  rfept_path <- system.file("extdata/examples/qacademico", package = "sistec")
+  sistec_path <- system.file("extdata/examples/sistec", package = "ARIA")
+  rfept_path <- system.file("extdata/examples/qacademico", package = "ARIA")
 
   # with the course SANEAMENTO
   sistec <- dplyr::filter(

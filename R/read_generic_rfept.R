@@ -27,7 +27,7 @@
 #' @examples
 #' # this dataset is not a real one. It is just for test purpose.
 #' rfept <- read_generic_rfept(system.file("extdata/examples/generic_rfept",
-#'   package = "sistec"
+#'   package = "ARIA"
 #' ))
 #'
 #' rfept

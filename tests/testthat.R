@@ -1,4 +1,4 @@
 library(testthat)
-library(sistec)
+library(ARIA)
 
-test_check("sistec")
+test_check("ARIA")
