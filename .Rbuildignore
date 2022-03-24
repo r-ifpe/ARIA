@@ -24,3 +24,4 @@
 ^extract_co_unidade_ensino\.R$
 ^pnp\.R$
 ^pnp_tests\.R$
+^test_update\.R$
