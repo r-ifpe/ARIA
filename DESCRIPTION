@@ -7,7 +7,7 @@ Authors@R: c(
     person("Carlos", "Patrício", email = "carlos.patricio@vitoria.ifpe.edu.br", role = "aut"),
     person("Cássio", "Santos", email = "cassiosantos@recife.ifpe.edu.br", role = "aut"),
     person("Clécio", "Santos", email = "cleciogsantos@vitoria.ifpe.edu.br", role = "aut"),
-    person("Tiago", "Spiandorello", email = "tiago.spiandorello@ifsc.edu.br", role = "ctb")
+    person("Tiago", "Spiandorello", email = "tiago.spiandorello@ifsc.edu.br", role = "aut")
     )
 Maintainer: Samuel Macêdo <samuelmacedo@recife.ifpe.edu.br>
 Description: The Brazilian system for diploma registration and validation on technical and superior
@@ -22,6 +22,7 @@ Depends:
     R (>= 3.6)
 Imports: 
     dplyr (>= 1.0),
+    httr,
     openxlsx,
     rlang,
     shiny,
