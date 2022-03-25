@@ -21,7 +21,7 @@ test_that("encoding and sep work", {
   # latin1 and ,
   sistec <- read_sistec(system.file("extdata/test_datasets/sistec_encoding/latin1",
     package = "ARIA"
-  ))
+  )) 
 
   if (windows) {
     expect_true(any(stringr::str_detect(sistec$S_NO_CURSO, latin1_characters)))
