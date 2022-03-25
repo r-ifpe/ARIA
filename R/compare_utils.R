@@ -250,7 +250,8 @@ merge_duplicated_registry <- function(x){
                       by = c("S_NO_CURSO", "S_DT_INICIO_CURSO")) %>% 
     dplyr::transmute(!!sym("R_NO_CURSO"), S_NO_CURSO_LINKED = !!sym("S_NO_CURSO"), 
                      !!sym("S_QT_ALUNOS_LINKED"), !!sym("S_NO_ALUNO"),
-                     !!sym("S_NU_CPF"), !!sym("S_CO_CICLO_MATRICULA"), 
+                     !!sym("S_NU_CPF"), !!sym("S_CO_ALUNO"),
+                     !!sym("S_CO_CICLO_MATRICULA"), 
                      !!sym("S_NO_STATUS_MATRICULA"), !!sym("S_NO_CURSO"), 
                      !!sym("S_DT_INICIO_CURSO"), !!sym("S_NO_CAMPUS"), 
                      !!sym("R_NO_ALUNO"), !!sym("R_CO_MATRICULA"), 

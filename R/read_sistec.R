@@ -44,18 +44,18 @@ read_sistec <- function(path = "", start = NULL) {
   temp <- paste0(path, "/", temp)
 
   vars_setec <- c(
-    "Nome Aluno", "Numero Cpf", "Co Ciclo Matricula", "Situa\u00e7\u00e3o Matricula",
+    "Nome Aluno", "Numero Cpf", "Co Aluno", "Co Ciclo Matricula", "Situa\u00e7\u00e3o Matricula",
     "No Curso", "Dt Data Inicio", "Unidade Ensino"
   )
 
   # using this while there is no CO_UNIDADE_ENSINO in sistec file
   vars_web_without_unidade_ensino <- c(
-    "NO_ALUNO", "NU_CPF", "CO_CICLO_MATRICULA", "NO_STATUS_MATRICULA",
+    "NO_ALUNO", "NU_CPF", "CO_ALUNO", "CO_CICLO_MATRICULA", "NO_STATUS_MATRICULA",
     "NO_CICLO_MATRICULA", "DT_DATA_INICIO"
   )
   
   vars_web <- c(
-    "NO_ALUNO", "NU_CPF", "CO_CICLO_MATRICULA", "NO_STATUS_MATRICULA",
+    "NO_ALUNO", "NU_CPF", "CO_ALUNO", "CO_CICLO_MATRICULA", "NO_STATUS_MATRICULA",
     "NO_CICLO_MATRICULA", "DT_DATA_INICIO", "CO_UNIDADE_ENSINO"
   )
 
@@ -74,7 +74,7 @@ read_sistec <- function(path = "", start = NULL) {
   co_unidade_ensino_exist <- any(grepl("CO_UNIDADE_ENSINO$", vars_sistec))
 
   if (num_vars_setec > 0) {
-    if (num_vars_setec < 7) {
+    if (num_vars_setec < 8) {
       stop(paste(
         "Not found:", paste(vars_setec[!vars_setec %in% vars_sistec], collapse = ", ")
       ))
@@ -83,7 +83,7 @@ read_sistec <- function(path = "", start = NULL) {
     }
   } else if(co_unidade_ensino_exist){
     if (num_vars_web > 0) { 
-      if (num_vars_web < 7) {
+      if (num_vars_web < 8) {
         stop(paste(
           "Not found:", paste(vars_web[!vars_web %in% vars_sistec], collapse = ", ")
         ))
@@ -93,7 +93,7 @@ read_sistec <- function(path = "", start = NULL) {
       }
     }
   } else if (num_vars_web_without_unidade_ensino > 0) {
-    if (num_vars_web_without_unidade_ensino < 6) {
+    if (num_vars_web_without_unidade_ensino < 7) {
       stop(paste(
         "Not found:",
         paste(
@@ -129,11 +129,12 @@ read_sistec_web <- function(path, encoding, sep) {
     dplyr::transmute(
       S_NO_ALUNO = !!sym("NO_ALUNO"),
       S_NU_CPF = num_para_cpf(!!sym("NU_CPF")),
+      S_CO_ALUNO = !!sym("CO_ALUNO"),
       S_CO_CICLO_MATRICULA = !!sym("CO_CICLO_MATRICULA"),
       S_NO_STATUS_MATRICULA = !!sym("NO_STATUS_MATRICULA"),
       S_NO_CURSO = correct_course_name(!!sym("NO_CICLO_MATRICULA")),
       S_DT_INICIO_CURSO = sistec_convert_beginning_date(!!sym("DT_DATA_INICIO")),
-      S_NO_CAMPUS = !!sym("S_NO_CAMPUS")
+      S_NO_CAMPUS = sistec_web_correct_campus_name(!!sym("S_NO_CAMPUS"))
     )
 
   class(sistec) <- c("sistec_data_frame", class(sistec))
@@ -154,6 +155,7 @@ read_sistec_web_without_unidade_ensino <- function(path, encoding, sep) {
     dplyr::transmute(
       S_NO_ALUNO = !!sym("NO_ALUNO"),
       S_NU_CPF = num_para_cpf(!!sym("NU_CPF")),
+      S_CO_ALUNO = !!sym("CO_ALUNO"),
       S_CO_CICLO_MATRICULA = !!sym("CO_CICLO_MATRICULA"),
       S_NO_STATUS_MATRICULA = !!sym("NO_STATUS_MATRICULA"),
       S_NO_CURSO = correct_course_name(!!sym("NO_CICLO_MATRICULA")),
@@ -179,6 +181,7 @@ read_sistec_setec <- function(path, encoding = "UTF-8") {
     dplyr::transmute(
       S_NO_ALUNO = !!sym("Nome.Aluno"),
       S_NU_CPF = num_para_cpf(!!sym("Numero.Cpf")),
+      S_CO_ALUNO = !!sym("Co.Aluno"),
       S_CO_CICLO_MATRICULA = !!sym("Co.Ciclo.Matricula"),
       S_NO_STATUS_MATRICULA = !!sym("Situa\u00e7\u00e3o.Matricula"), # Situação.Matricula
       S_NO_CURSO = correct_course_name(!!sym("No.Curso")),
@@ -213,6 +216,10 @@ sistec_campus_name <- function(campus) {
 
 sistec_correct_campus_name <- function(campus) {
   stringr::str_replace(campus, "REU E LIMA", "ABREU E LIMA")
+}
+
+sistec_web_correct_campus_name <- function(campus) {
+  stringr::str_remove_all(campus, "CAMPUS ")
 }
 
 filter_sistec_date <- function(x, start) {

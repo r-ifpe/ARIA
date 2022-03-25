@@ -27,6 +27,7 @@ rename_sistec_data_frame <- function(x){
   x %>% 
     dplyr::select(NOME = !!sym("S_NO_ALUNO"),
                   CPF = !!sym("S_NU_CPF"),
+                  CODIGO_ALUNO = !!sym("S_CO_ALUNO"),
                   CICLO = !!sym("S_CO_CICLO_MATRICULA"),
                   INICIO = !!sym("S_DT_INICIO_CURSO"),
                   STATUS = !!sym("S_NO_STATUS_MATRICULA"),
@@ -69,6 +70,7 @@ rename_comparison_data_frame <- function(x){
   x %>% 
     dplyr::select(NOME = !!sym("S_NO_ALUNO"),
                   CPF = !!sym("S_NU_CPF"),
+                  CODIGO_ALUNO = !!sym("S_CO_ALUNO"),
                   !!rfept_matricula := !!sym("R_CO_MATRICULA"),
                   !!rfept_status := !!sym("R_NO_STATUS_MATRICULA"),
                   STATUS_SISTEC = !!sym("S_NO_STATUS_MATRICULA"),
