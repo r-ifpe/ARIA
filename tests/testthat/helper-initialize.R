@@ -2,7 +2,7 @@ check_sistec_table <- function(x, expect_nrow) {
   expect_equal(
     colnames(x),
     c(
-      "S_NO_ALUNO", "S_NU_CPF", "S_CO_ALUNO", "S_CO_CICLO_MATRICULA", 
+      "S_NO_ALUNO", "S_NU_CPF", "S_CO_ALUNO", "S_CO_CICLO_MATRICULA",
       "S_NO_STATUS_MATRICULA", "S_NO_CURSO", "S_DT_INICIO_CURSO",
       "S_NO_CAMPUS"
     )
@@ -28,11 +28,12 @@ check_sistec_students_table <- function(x, expect_nrow) {
   expect_equal(
     colnames(x),
     c(
-      "S_CO_CICLO_MATRICULA", "S_NO_ALUNO", "S_NU_CPF",                
-      "S_NO_STATUS_MATRICULA", "S_NO_CICLO_MATRICULA", "S_DT_INICIO_ANO_SEMESTRE"
+      "S_CO_CICLO_MATRICULA", "S_NO_ALUNO", "S_NU_CPF",
+      "S_NO_STATUS_MATRICULA", "S_NO_CICLO_MATRICULA",
+      "S_DT_INICIO_ANO_SEMESTRE"
     )
   )
-  
+
   expect_equal(nrow(x), expect_nrow)
   expect_true(inherits(x, "sistec_students_data_frame"))
 }
@@ -41,12 +42,13 @@ check_ciclo_table <- function(x, expect_nrow) {
   expect_equal(
     colnames(x),
     c(
-      "C_CO_CICLO_MATRICULA", "C_NO_CAMPUS", "C_NO_SUBTIPO", "C_NU_CARGA_HORARIA",
-      "C_DT_FIM", "C_DT_INICIO", "C_DT_CRIACAO", "C_NU_QTD_MATRICULAS", "C_NU_QTD_VAGAS",
+      "C_CO_CICLO_MATRICULA", "C_NO_CAMPUS", "C_NO_SUBTIPO",
+      "C_NU_CARGA_HORARIA", "C_DT_FIM", "C_DT_INICIO", "C_DT_CRIACAO",
+      "C_NU_QTD_MATRICULAS", "C_NU_QTD_VAGAS",
       "C_NU_QTD_INSCRITOS", "C_DT_INICIO_ANO_SEMESTRE"
     )
   )
-  
+
   expect_equal(nrow(x), expect_nrow)
   expect_true(inherits(x, "sistec_ciclo_data_frame"))
 }
@@ -55,11 +57,11 @@ check_students_critics_table <- function(x, expect_nrow) {
   expect_equal(
     colnames(x),
     c(
-      "C_NO_CAMPUS", "S_NO_CICLO_MATRICULA", "S_NO_ALUNO", 
-      "S_NU_CPF",  "CRITICA"
+      "C_NO_CAMPUS", "S_NO_CICLO_MATRICULA", "S_NO_ALUNO",
+      "S_NU_CPF", "CRITICA"
     )
   )
-  
+
   expect_equal(nrow(x), expect_nrow)
 }
 
@@ -67,11 +69,11 @@ check_ciclo_critics_table <- function(x, expect_nrow) {
   expect_equal(
     colnames(x),
     c(
-      "C_NO_CAMPUS", "S_NO_CICLO_MATRICULA", "S_NO_ALUNO", 
-      "S_NU_CPF",  "CRITICA"
+      "C_NO_CAMPUS", "S_NO_CICLO_MATRICULA", "S_NO_ALUNO",
+      "S_NU_CPF", "CRITICA"
     )
   )
-  
+
   expect_equal(nrow(x), expect_nrow)
 }
 
@@ -81,10 +83,10 @@ check_wrong_registration <- function(x, expect_nrow) {
     colnames(x),
     c(
       "R_NO_CURSO", "S_NO_CURSO_LINKED", "S_QT_ALUNOS_LINKED", "R_NO_ALUNO",
-      "R_NU_CPF", "R_CO_MATRICULA", "R_CO_CICLO_MATRICULA", "R_NO_STATUS_MATRICULA",
-      "R_DT_INICIO_CURSO", "R_NO_CAMPUS", "R_NO_COTA", "S_NO_ALUNO",
-      "S_CO_ALUNO", "S_CO_CICLO_MATRICULA", "S_NO_STATUS_MATRICULA", 
-      "S_NO_CURSO", "S_DT_INICIO_CURSO", "S_NO_CAMPUS"
+      "R_NU_CPF", "R_CO_MATRICULA", "R_CO_CICLO_MATRICULA",
+      "R_NO_STATUS_MATRICULA", "R_DT_INICIO_CURSO", "R_NO_CAMPUS",
+      "R_NO_COTA", "S_NO_ALUNO", "S_CO_ALUNO", "S_CO_CICLO_MATRICULA",
+      "S_NO_STATUS_MATRICULA", "S_NO_CURSO", "S_DT_INICIO_CURSO", "S_NO_CAMPUS"
     )
   )
 
@@ -96,9 +98,10 @@ check_situation_table <- function(x, expect_nrow) {
     c(
       "R_NO_CURSO", "S_NO_CURSO_LINKED", "S_QT_ALUNOS_LINKED", "S_NO_ALUNO",
       "S_NU_CPF", "S_CO_ALUNO", "S_CO_CICLO_MATRICULA", "S_NO_STATUS_MATRICULA",
-      "S_NO_CURSO", "S_DT_INICIO_CURSO", "S_NO_CAMPUS", "R_NO_ALUNO", 
-      "R_CO_MATRICULA", "R_CO_CICLO_MATRICULA", "R_NO_STATUS_MATRICULA", 
-      "R_DT_INICIO_CURSO", "R_NO_CAMPUS", "R_NO_COTA", "S_NO_STATUS_IGUAL"
+      "S_NO_CURSO", "S_DT_INICIO_CURSO", "S_NO_CAMPUS", "R_NO_ALUNO",
+      "R_CO_MATRICULA", "R_CO_CICLO_MATRICULA", "R_NO_STATUS_MATRICULA",
+      "R_DT_INICIO_CURSO", "R_NO_CAMPUS", "R_NO_COTA",
+      "R_NO_STATUS_MATRICULA_SISTEC", "S_NO_STATUS_IGUAL"
     )))
 
   expect_equal(nrow(x), expect_nrow)
@@ -220,6 +223,7 @@ download_test_datasets <- function(test_datasets_folder = NULL) {
       "https://raw.githubusercontent.com/r-ifpe/ARIA/master/inst/extdata/test_datasets/generic_rfept/wrong_status/fake_generic_rfept.csv"
     )
 
+    
     for (i in 1:length(destfile)) {
       utils::download.file(datasests_paths[i],
         destfile = destfile[i],
