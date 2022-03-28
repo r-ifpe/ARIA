@@ -1,7 +1,7 @@
 #' Save the comparison results
 #'
-#' You can use this function to save the results separated by campus. The results will be
-#' saved in .xlsx format.
+#' You can use this function to save the results separated by campus.
+#' The results will be saved in .xlsx format.
 #'
 #' @param x A list returned by `compare_sistec()`.
 #' @param output_path The folder where you want to save the results.
@@ -45,22 +45,40 @@ write_output.comparison_list <- function(x,
 #' @importFrom dplyr %>% sym
 group_sistec <- function(x) {
   sistec_without_cpf <- x$sistec_without_cpf %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "sistec_without_cpf")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "sistec_without_cpf"
+    )
 
   sistec_without_rfept <- x$sistec_without_rfept %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "sistec_without_rfept")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "sistec_without_rfept"
+    )
 
   sistec_wrong_cpf <- x$sistec_wrong_cpf %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "sistec_wrong_cpf")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "sistec_wrong_cpf"
+    )
 
   sistec_duplicated_registry <- x$sistec_duplicated_registry %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "sistec_duplicated_registry")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "sistec_duplicated_registry"
+    )
 
   sistec_unlinked_entry <- x$sistec_unlinked_entry %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "sistec_unlinked_entry")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "sistec_unlinked_entry"
+    )
 
   sistec_pending <- x$sistec_pending %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "sistec_pending")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "sistec_pending"
+    )
 
   dplyr::full_join(sistec_without_cpf, sistec_without_rfept, by = c("CAMPUS", "CURSO")) %>%
     dplyr::full_join(sistec_wrong_cpf, by = c("CAMPUS", "CURSO")) %>%
@@ -72,25 +90,46 @@ group_sistec <- function(x) {
 #' @importFrom dplyr %>% sym
 group_rfept <- function(x) {
   rfept_without_cpf <- x$rfept_without_cpf %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "rfept_without_cpf")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "rfept_without_cpf"
+    )
 
   rfept_without_sistec <- x$rfept_without_sistec %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "rfept_without_sistec")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "rfept_without_sistec"
+    )
 
   rfept_wrong_cpf <- x$rfept_wrong_cpf %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "rfept_wrong_cpf")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "rfept_wrong_cpf"
+    )
 
   rfept_duplicated_registry <- x$rfept_duplicated_registry %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "rfept_duplicated_registry")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "rfept_duplicated_registry"
+    )
 
   rfept_unlinked_entry <- x$rfept_unlinked_entry %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "rfept_unlinked_entry")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "rfept_unlinked_entry"
+    )
 
   rfept_pending <- x$rfept_pending %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "rfept_pending")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "rfept_pending"
+    )
 
   wrong_beginning <- x$wrong_beginning %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "wrong_beginning")
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"),
+      .key = "wrong_beginning"
+    )
 
   situation_to_update <- x$situation_to_update %>%
     dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), .key = "situation_to_update")
@@ -110,8 +149,14 @@ group_rfept <- function(x) {
 
 #' @importFrom dplyr %>% sym
 group_cpf_registration <- function(x) {
-  dplyr::semi_join(x$rfept_complete, x$rfept_without_sistec, by = "MATRICULA") %>%
-    dplyr::group_nest(!!sym("CAMPUS"), !!sym("CURSO"), !!sym("CICLO"), .key = "quota")
+  dplyr::semi_join(
+    x$rfept_complete, x$rfept_without_sistec,
+    by = "MATRICULA"
+  ) %>%
+    dplyr::group_nest(
+      !!sym("CAMPUS"), !!sym("CURSO"), !!sym("CICLO"),
+      .key = "quota"
+    )
 }
 
 write_sistec <- function(x, path, rfept_table) {

@@ -38,8 +38,8 @@ test_that("write_output() works", {
   aria_file_all_tables <- lapply(1:6, function(e) {
     openxlsx::read.xlsx(aria_files_path[8], sheet = e)
   })
-  
-  # check names -------------------------------------------------------------------
+
+  # check names -----------------------------------------------------
   expect_equal(
     unlist(lapply(aria_files_by_course, names)),
     c(
@@ -47,20 +47,20 @@ test_that("write_output() works", {
       "NOME", "CPF", "MATRICULA", "COTA",
       "NOME", "CPF", "MATRICULA", "COTA",
       "INICIO", "CICLO", "CURSO_SISTEC", "CURSO_QACADEMICO", "CAMPUS",
-      "NOME", "CPF", "MATRICULA", "INICIO","STATUS",
-      "NOME", "CPF", "MATRICULA", "INICIO","STATUS",
-      "NOME", "CPF", "CODIGO_ALUNO", "CICLO", "INICIO","STATUS"
+      "NOME", "CPF", "MATRICULA", "INICIO", "STATUS",
+      "NOME", "CPF", "MATRICULA", "INICIO", "STATUS",
+      "NOME", "CPF", "CODIGO_ALUNO", "CICLO", "INICIO", "STATUS"
     )
   )
 
   expect_equal(
     unlist(lapply(aria_file_all_tables, names)),
     c(
-      "NOME", "CPF", "CODIGO_ALUNO", "CICLO", "INICIO","STATUS", "CAMPUS", "CURSO",
-      "NOME", "CPF", "MATRICULA", "INICIO","STATUS", "CAMPUS", "CURSO",
+      "NOME", "CPF", "CODIGO_ALUNO", "CICLO", "INICIO", "STATUS", "CAMPUS", "CURSO",
       "NOME", "CPF", "MATRICULA", "INICIO", "STATUS", "CAMPUS", "CURSO",
-      "NOME", "CPF", "CODIGO_ALUNO", "MATRICULA_QACADEMICO", "STATUS_QACADEMICO", "STATUS_SISTEC", "CAMPUS", "CURSO", "CICLO",
-      "NOME", "CPF", "CODIGO_ALUNO", "MATRICULA_QACADEMICO", "STATUS_QACADEMICO", "STATUS_SISTEC", "CAMPUS", "CURSO", "CICLO",
+      "NOME", "CPF", "MATRICULA", "INICIO", "STATUS", "CAMPUS", "CURSO",
+      "NOME", "CPF", "CODIGO_ALUNO", "MATRICULA_QACADEMICO", "MATRICULA_EQUIVALENTE_QACADEMICO", "STATUS_QACADEMICO", "STATUS_SISTEC", "CAMPUS", "CURSO", "CICLO",
+      "NOME", "CPF", "CODIGO_ALUNO", "MATRICULA_QACADEMICO", "MATRICULA_EQUIVALENTE_QACADEMICO", "STATUS_QACADEMICO", "STATUS_SISTEC", "CAMPUS", "CURSO", "CICLO",
       "INICIO", "CICLO", "CURSO_SISTEC", "CURSO_QACADEMICO", "CAMPUS"
     )
   )
